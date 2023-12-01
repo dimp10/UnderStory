@@ -12,7 +12,6 @@ let changey
 let change = 0
 let stepForEn = 100
 let counter = 0
-let mySprite = sprites.create(assets.image`Plc`, SpriteKind.Player)
 
 game.onUpdate(function() {
     getSteps()
