@@ -3,7 +3,6 @@ tiles.setCurrentTilemap(tilemap`World_1`)
 controller.moveSprite(Player)
 scene.cameraFollowSprite(Player)
 
-let Counter = 99
 let playerx
 let oPlayerx = 0
 let playery
@@ -11,27 +10,33 @@ let oPlayery = 0
 let changex
 let changey
 let change = 0
-let stepForEn = 10
+let stepForEn = 100
+let counter = 0
+let mySprite = sprites.create(assets.image`Plc`, SpriteKind.Player)
 
 game.onUpdate(function() {
     getSteps()
+    console.log(counter)
+    
+    counter += change
+    if (counter > stepForEn) { // To check if character has been displaced enough
+        counter = counter - stepForEn
+        //mySprite.setPosition(80,80)
+        
+    }
 })
 
-function getSteps(): void{
+function getSteps(): number{
     playerx = Player.x
     playery = Player.y
     changex = oPlayerx - playerx
     changey = oPlayery - playery
     oPlayerx = playerx
     oPlayery = playery
-    Math.abs(changex)
-    Math.abs(changey)
+    changex = Math.abs(changex)
+    changey = Math.abs(changey)
     change = changex + changey
+    return change 
 }
 
-if (change > stepForEn) { // To check if character has been displaced enough
-    change = change - stepForEn
-    console.debug("yes")
-
-}
 
