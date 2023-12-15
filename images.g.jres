@@ -9,6 +9,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Player"
     },
+    "image3": {
+        "data": "hwQQABAAAAAAkJCQCZkAAJAJmZmZCZkAAJn///+ZCZAJ+R8R8f+ZCZn/ERER8Z8JkB/x//Ef/5mZH/HxEf/xn5Af8f8R8RGfkB8RERHxEZ+ZH/H/Ef/xn5kf8fHxEf+ZkP/x//HxnwmZ+R8REf+ZAACQ////mQkAAJCZmZmZAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Boss 1"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
