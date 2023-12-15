@@ -1,9 +1,16 @@
-
-
-let Player = sprites.create(assets.image`Player`, SpriteKind.Player)
 tiles.setCurrentTilemap(tilemap`World_1`)
+let myMinimap2 = minimap.minimap(1.25)
+let tileMap = sprites.create(minimap.getImage(myMinimap2), SpriteKind.Player)
+let Player = sprites.create(assets.image`Player`)
+Player.setPosition(234, 150)
+//Player.z = -5
+game.onUpdate(function() {
+    minimap.includeSprite(myMinimap2, Player)
+})
+tileMap.setPosition(80,60)
+
 controller.moveSprite(Player)
-scene.cameraFollowSprite(Player)
+//scene.cameraFollowSprite(Player)
 let playerx
 let oPlayerx = 0
 let playery
