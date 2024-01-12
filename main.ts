@@ -1,13 +1,20 @@
 tiles.setCurrentTilemap(tilemap`World_1`)
-let myMinimap2 = minimap.minimap(1.25)
 let tileMap = sprites.create(minimap.getImage(myMinimap2), SpriteKind.Player)
 let Player = sprites.create(assets.image`Player`)
 Player.setPosition(234, 150)
 //Player.z = -5
-game.onUpdate(function() {
-    minimap.includeSprite(myMinimap2, Player)
-})
+
 tileMap.setPosition(80,60)
+
+function make_minimap() {
+    let minimap_object = minimap.minimap(1.25)
+    let minimap_image = minimap.getImage(minimap_object)
+    let minimap_sprite = sprites.create(minimap_image, SpriteKind.Player)
+}
+
+function update_minimap() {
+    minimap.includeSprite(minimap_object, Player)
+}
 
 controller.moveSprite(Player)
 //scene.cameraFollowSprite(Player)
@@ -20,6 +27,7 @@ let changey
 let change = 0
 let stepForEn = 500
 let counter = 0
+
 game.onUpdate(function () {
     getSteps()
     console.log(counter)
@@ -44,4 +52,4 @@ function getSteps(): number {
 }
 let myMinimap = minimap.minimap(1000000, 150, 0)
 minimap.getImage(myMinimap)
-minimap.includeSprite(myMinimap, Player)
+minimap.includeSprite(myMinimap2, Player)
