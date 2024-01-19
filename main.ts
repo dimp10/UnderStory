@@ -1,5 +1,5 @@
 tiles.setCurrentTilemap(tilemap`World_1`)
-let tileMap = sprites.create(minimap.getImage(myMinimap2), SpriteKind.Player)
+let tileMap = sprites.create(minimap.getImage(myMinimap), SpriteKind.Player)
 let Player = sprites.create(assets.image`Player`)
 Player.setPosition(234, 150)
 //Player.z = -5
@@ -13,7 +13,7 @@ function make_minimap() {
 }
 
 function update_minimap() {
-    minimap.includeSprite(minimap_object, Player)
+    minimap.includeSprite(minimap_object), Player)
 }
 
 controller.moveSprite(Player)
