@@ -1,19 +1,27 @@
 tiles.setCurrentTilemap(tilemap`World_1`)
-let tileMap = sprites.create(minimap.getImage(myMinimap2), SpriteKind.Player)
+let myMinimap = minimap.minimap(1000000, 150, 0)
+minimap.getImage(myMinimap)
+let tileMap = sprites.create(minimap.getImage(myMinimap), SpriteKind.Player)
 let Player = sprites.create(assets.image`Player`)
 Player.setPosition(234, 150)
 //Player.z = -5
 
 tileMap.setPosition(80,60)
 
-function make_minimap() {
-    let minimap_object = minimap.minimap(1.25)
-    let minimap_image = minimap.getImage(minimap_object)
-    let minimap_sprite = sprites.create(minimap_image, SpriteKind.Player)
-}
+// function make_minimap() {
+//     let minimap_object = minimap.minimap(1.25)
+//     let minimap_image = minimap.getImage(minimap_object)
+//     let minimap_sprite = sprites.create(minimap_image, SpriteKind.Player)
+// }
+
+let minimap_object = minimap.minimap(1.25)
+let minimap_image = minimap.getImage(minimap_object)
+let minimap_sprite = sprites.create(minimap_image, SpriteKind.Player)
 
 function update_minimap() {
+    let minimap_object = minimap.minimap(1.25)
     minimap.includeSprite(minimap_object, Player)
+    minimap_sprite.setImage(minimap.getImage(minimap_object))
 }
 
 controller.moveSprite(Player)
@@ -26,15 +34,17 @@ let changex
 let changey
 let change = 0
 let stepForEn = 500
-let counter = 0
+let counter = -386
 
 game.onUpdate(function () {
     getSteps()
+    update_minimap()
     console.log(counter)
     counter += change
     if (counter > stepForEn) { // To check if character has been displaced enough
         counter = counter - stepForEn
         battle.tileMap()
+        //minimap_sprite.setFlag(SpriteFlag.Invisible, true)
 
     }
 })
@@ -50,6 +60,4 @@ function getSteps(): number {
     change = changex + changey
     return change
 }
-let myMinimap = minimap.minimap(1000000, 150, 0)
-minimap.getImage(myMinimap)
-minimap.includeSprite(myMinimap2, Player)
+//minimap.includeSprite(myMinimap2, Player)

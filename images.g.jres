@@ -14,6 +14,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Boss 1"
     },
+    "image4": {
+        "data": "hwQQABAAAAAAIiICAAAAACAiIiIAAAAAIiIiIgIAAAAiIiIiIgAAACIiIiIiAgAAICIiIiIiAAAAIiIiIiICAAAgIiIiIiIAACAiIiIiIgAAIiIiIiICACAiIiIiIgAAIiIiIiICAAAiIiIiIgAAACIiIiICAAAAICIiIgAAAAAAIiICAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Soul"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
